@@ -20,6 +20,40 @@ Table 1 and Figure 2 presents the distributions of the test, validation, and tra
 
 The experiments were performed on a single server using tf.distribute.Mirrored Strategy, a TensorFlow API to distribute training across multiple GPUs and several software or packages such as CUDA (vers. 11.2), Python (vers. 3.9.7) and TensorFlow (vers. 2.4.1).The proposed MCBGPT-2 model was trained and validated using the aforementioned news corpus, that contain 18 fake news and 24,582 true news, 368 news with negative polarity and 2135 news with positive polarity, being split in equal parts between train, test and validation datasets. For this research, the Adam optimizer is used with a small learning rate (e.g., 3 x 105), a loss function such as sparse categorical cross-entropy and a vocabulary size of 60,000 words. Several training statistics of the proposed model, including the hyperparameters and training time, are presented in Table 2. 
 
+```python
+block_size = 512
+BATCH_SIZE = 12
+BUFFER_SIZE = 1000
+# defining our optimizer
+optimizer = tf.keras.optimizers.Adam(learning_rate=3e-5, epsilon=1e-08, clipnorm=1.0)
+# definining our loss function
+loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+# defining our metric which we want to observe
+metric = tf.keras.metrics.SparseCategoricalAccuracy('accuracy')
+# compiling the model
+model.compile(optimizer=optimizer, loss=[loss, *[None] * model.config.n_layer], metrics=[metric])
+
+num_epoch = 15
+
+history = model.fit(dataset, epochs=num_epoch)
+from transformers import WEIGHTS_NAME, CONFIG_NAME
+
+output_dir = configuration.get_property('PYTHON_DIR') + "/gpt_models/mcb_model"
+
+# creating directory if it is not present
+if not os.path.exists(output_dir):
+    os.mkdir(output_dir)
+
+model_to_save = model.module if hasattr(model, 'module') else model
+output_model_file = os.path.join(output_dir, WEIGHTS_NAME)
+output_config_file = os.path.join(output_dir, CONFIG_NAME)
+# save model and model configs
+model.save_pretrained(output_dir)
+model_to_save.config.to_json_file(output_config_file)
+# save tokenizer
+tokenizer.save_pretrained(output_dir)
+```
+
 **Table 2 Training statistics of MCBGPT-2 model**
 |    Parameters name   | Value of parameter | 
 | -------------------- |:------------------:| 
