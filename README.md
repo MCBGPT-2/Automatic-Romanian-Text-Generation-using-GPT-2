@@ -233,4 +233,4 @@ The MCBGPT-2 model achieves slightly better scores than RoGPT-2 model for the BE
 
 **Thanks**
 ---
-Thanks to professors [Ștefan TRĂUȘAN-MATU](https://scholar.google.com/citations?hl=ro&user=p_KpBToAAAAJ) and [Traian REBEDEA](https://scholar.google.com/citations?hl=ro&user=7NxaE1MAAAAJ)
+I am really thankful to have you as both professor and academic advisor - [Ștefan TRĂUȘAN-MATU](https://scholar.google.com/citations?hl=ro&user=p_KpBToAAAAJ) and [Traian REBEDEA](https://scholar.google.com/citations?hl=ro&user=7NxaE1MAAAAJ)
