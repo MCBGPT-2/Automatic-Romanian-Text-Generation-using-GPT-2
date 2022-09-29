@@ -119,7 +119,7 @@ For the experiments, the automatic metrics have the following input parameters:
 [GLEU metric (General Language Evaluation Understanding)](https://web.science.mq.edu.au/~rdale/publications/papers/2007/gleu4ps2pdf.pdf)
 
 
-**BERTScore**
+**BERTScore metric**
 ---
 ```python
 output_dir = configuration.get_property('PYTHON_DIR') + "/gpt_models/bert-base-multilingual-cased/"
