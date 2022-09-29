@@ -103,7 +103,7 @@ for id_single, text in updated_texts.items():
                                               'database').
 ```
 
-**Experiments**
+**Automatic metrics**
 ---
 For the experiments, the automatic metrics have the following input parameters:
 -	[_Bilingual Evaluation Understudy Score (BLEU)_](https://dl.acm.org/doi/10.3115/1073083.1073135) – only one reference was used, the maximum n-gram length was set to four and no pre-processing techniques were applied.
