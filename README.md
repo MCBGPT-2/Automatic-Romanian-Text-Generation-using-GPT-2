@@ -40,7 +40,7 @@ The experiments were performed on a single server using tf.distribute.Mirrored S
 
 </div>
 
-**Save the MCB model**
+**The MCBGPT-2 model**
 ---
 ```python
 block_size = 512
@@ -72,14 +72,13 @@ tokenizer.save_pretrained(output_dir)
 ```
 
 
-**Generate text with MCBGPT-2 model**
+**Generate text with the MCBGPT-2 model**
 ---
 ```python
 output_dir = configuration.get_property('PYTHON_DIR') + "/gpt_models/mcb_model/"
 CUDA_LAUNCH_BLOCKING = 1
 # TensorFlow
 from transformers import AutoTokenizer, TFAutoModelForCausalLM
-from sacrebleu import sentence_bleu
 
 results = sqlI.select_all_rows_from_table(['columns'], 'table', 'database', None, 'primaryKey DESC')
 tokenizer = AutoTokenizer.from_pretrained(output_dir)
@@ -174,9 +173,9 @@ This paper was focused on the quantitative evaluation (Figure 4, Figure 5, Figur
 In this research, a new GPT-2 architecture have been tested and evaluated, generating news items based on short Romanian text prompts. Using automatic metrics such as BLEU, ROUGE, BLEURT and BERTScore, the MCBGPT-2 and RoGPT-2 models are compared, thus, providing another solution for Romanian text generation systems. 
 
 
-The MCBGPT-2 model achieves slightly better scores than RoGPT-2 model for the BERTScore metric when are evaluated larger sentences, considering the quantitative evaluation. 
+The MCBGPT-2 model achieves slightly better scores than RoGPT-2 model for the BERTScore metric when are evaluated larger sentences (Table 4), considering the quantitative evaluation. 
 
-**Examples of Romanian generated sentences**
+**Table 4 Examples of Romanian generated sentences**
 
 <table align="center">
   <tr>
