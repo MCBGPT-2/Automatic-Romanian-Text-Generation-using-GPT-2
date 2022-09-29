@@ -220,6 +220,17 @@ The MCBGPT-2 model achieves slightly better scores than RoGPT-2 model for the BE
   </tr>
 </table>
 
-**Final note**
 
-Thanks to professor [Ștefan TRĂUȘAN-MATU](https://scholar.google.com/citations?hl=ro&user=p_KpBToAAAAJ) and [Traian REBEDEA](https://scholar.google.com/citations?hl=ro&user=7NxaE1MAAAAJ)
+**Articles**
+---
+[Automatic Fake News Detection for Romanian Online News](https://www.mdpi.com/2078-2489/13/3/151)
+
+[Automatic Irony Detection for Romanian Online News](https://ieeexplore.ieee.org/document/9259715)
+
+[Targeted Romanian Online News in a Mobile Application Using AI](http://rochi.utcluj.ro/articole/8/RoCHI2020-Buzea.pdf)
+
+[A Three Word-Level Approach Used in Machine Learning for Romanian Sentiment Analysis](https://ieeexplore.ieee.org/document/8909458)
+
+**Thanks**
+---
+Thanks to professors [Ștefan TRĂUȘAN-MATU](https://scholar.google.com/citations?hl=ro&user=p_KpBToAAAAJ) and [Traian REBEDEA](https://scholar.google.com/citations?hl=ro&user=7NxaE1MAAAAJ)
